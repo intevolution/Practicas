@@ -15,7 +15,7 @@ class EchoBot {
                 process.exit();
             } else {
                 // Echo the message text back to the user.
-                return context.sendActivity(`I heard you say "${ context.activity.text }"`);
+                return context.sendActivity(`Acabas de escribir "${ context.activity.text }"`);
             }
         }
     }
