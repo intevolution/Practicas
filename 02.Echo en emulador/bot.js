@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-const { ActivityHandler, MessageFactory } = require('botbuilder');
+const { ActivityHandler } = require('botbuilder');
 
 class EchoBot extends ActivityHandler {
     constructor() {
@@ -12,6 +12,10 @@ class EchoBot extends ActivityHandler {
             const replyText = `Echo: ${ context.activity.text }`;
             await context.sendActivity(replyText);
 
+            //====== Error
+            // await context.sendActivity(respuesta);
+
+            //====== Ejemplo de manejo de mensajes
             // console.log(inMessage);
             // if( inMessage === 'hola' ){                
             //     await context.sendActivity('Hola!, ¿como te va?');
