@@ -12,6 +12,10 @@ class EchoBot extends ActivityHandler {
             const replyText = `Echo: ${ context.activity.text }`;
             await context.sendActivity(replyText);
 
+            //====== Mostrar toda la información que esta en context.activity
+            // const activityContent = context.activity;
+            // console.log(activityContent);
+
             //====== Error
             // await context.sendActivity(respuesta);
 
@@ -22,20 +26,21 @@ class EchoBot extends ActivityHandler {
             // }
 
             // By calling next() you ensure that the next BotHandler is run.
-            await next();
+            await next(); //Indicar que terminó el turno del Bot
         });
 
-        this.onMembersAdded(async (context, next) => {
-            const membersAdded = context.activity.membersAdded;
-            const welcomeText = 'Hola, bienvenido a las practicas de Intevolution!';
-            for (let cnt = 0; cnt < membersAdded.length; ++cnt) {
-                if (membersAdded[cnt].id !== context.activity.recipient.id) {
-                    await context.sendActivity(welcomeText);
-                }
-            }
-            // By calling next() you ensure that the next BotHandler is run.
-            await next();
-        });
+        // this.onMembersAdded(async (context, next) => {
+        //     const membersAdded = context.activity.membersAdded;
+        //     const welcomeText = 'Hola, bienvenido a las practicas de Intevolution!';
+        //     for (let cnt = 0; cnt < membersAdded.length; ++cnt) {
+        //         if (membersAdded[cnt].id !== context.activity.recipient.id) {
+        //             await context.sendActivity(welcomeText);
+        //         }
+        //     }
+
+        //     // By calling next() you ensure that the next BotHandler is run.
+        //     await next();
+        // });
     }
 }
 
