@@ -9,9 +9,9 @@ class EchoBot {
         // (It could theoretically be another type of activity.)
         if (context.activity.type === 'message' && context.activity.text) {
             // Check to see if the user sent a simple "quit" message.
-            if (context.activity.text.toLowerCase() === 'quit') {
+            if (context.activity.text.toLowerCase() === 'salir') {
                 // Send a reply.
-                context.sendActivity('Bye!');
+                context.sendActivity('Hasta luego!');
                 process.exit();
             } else {
                 // Echo the message text back to the user.
