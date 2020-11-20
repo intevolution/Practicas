@@ -1,8 +1,8 @@
-# welcome-users
+# echo-bot
 
-Bot Framework v4 welcome users bot sample
+Bot Framework v4 echo bot sample
 
-This bot has been created using [Bot Framework](https://dev.botframework.com), is shows how to welcome a user when join the conversation.
+This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to create a simple bot that accepts input from the user and echoes it back.
 
 ## Prerequisites
 
@@ -18,13 +18,13 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 - Clone the repository
 
     ```bash
-    git clone https://github.com/Microsoft/botbuilder-samples.git
+    git clone https://github.com/microsoft/botbuilder-samples.git
     ```
 
-- In a terminal, navigate to `samples/javascript_nodejs/03.welcome-users`
+- In a terminal, navigate to `samples/javascript_nodejs/02.echo-bot`
 
     ```bash
-    cd samples/javascript_nodejs/03.welcome-users
+    cd samples/javascript_nodejs/02.echo-bot
     ```
 
 - Install modules
@@ -50,10 +50,6 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 - Launch Bot Framework Emulator
 - File -> Open Bot
 - Enter a Bot URL of `http://localhost:3978/api/messages`
-
-## Welcoming Users
-
-The primary goal when creating any bot is to engage your user in a meaningful conversation. One of the best ways to achieve this goal is to ensure that from the moment a user first connects, they understand your bot’s main purpose and capabilities, the reason your bot was created. See [Send welcome message to users](https://aka.ms/botframework-welcome-instructions) for additional information on how a bot can welcome uers to a conversation.
 
 ## Deploy the bot to Azure
 
