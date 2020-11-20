@@ -20,9 +20,9 @@ const { EchoBot } = require('./bot');
 // Create HTTP server
 const server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, () => {
-    console.log(`\n${ server.name } listening to ${ server.url }`);
-    console.log('\nGet Bot Framework Emulator: https://aka.ms/botframework-emulator');
-    console.log('\nTo talk to your bot, open the emulator select "Open Bot"');
+    console.log(`\n${ server.name } escuchando a http://localhost:3978/api/messages`);
+    // console.log('\nGet Bot Framework Emulator: https://aka.ms/botframework-emulator');
+    console.log('\nHáblale a tu bot, abre el simulador y selecciona "Open Bot"');
 });
 
 // Create adapter.
@@ -48,8 +48,8 @@ const onTurnErrorHandler = async (context, error) => {
     );
 
     // Send a message to the user
-    await context.sendActivity('The bot encountered an error or bug.');
-    await context.sendActivity('To continue to run this bot, please fix the bot source code.');
+    await context.sendActivity('El bot ha encontrado un error.');
+    await context.sendActivity('Para continuar, primero arregla este error.');
 };
 
 // Set the onTurnError for the singleton BotFrameworkAdapter.

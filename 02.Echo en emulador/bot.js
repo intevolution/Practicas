@@ -8,18 +8,25 @@ class EchoBot extends ActivityHandler {
         super();
         // See https://aka.ms/about-bot-activity-message to learn more about the message and other activity types.
         this.onMessage(async (context, next) => {
+            const inMessage = context.activity.text;
             const replyText = `Echo: ${ context.activity.text }`;
-            await context.sendActivity(MessageFactory.text(replyText, replyText));
+            await context.sendActivity(replyText);
+
+            // console.log(inMessage);
+            // if( inMessage === 'hola' ){                
+            //     await context.sendActivity('Hola!, ¿como te va?');
+            // }
+
             // By calling next() you ensure that the next BotHandler is run.
             await next();
         });
 
         this.onMembersAdded(async (context, next) => {
             const membersAdded = context.activity.membersAdded;
-            const welcomeText = 'Hello and welcome!';
+            const welcomeText = 'Hola, bienvenido a las practicas de Intevolution!';
             for (let cnt = 0; cnt < membersAdded.length; ++cnt) {
                 if (membersAdded[cnt].id !== context.activity.recipient.id) {
-                    await context.sendActivity(MessageFactory.text(welcomeText, welcomeText));
+                    await context.sendActivity(welcomeText);
                 }
             }
             // By calling next() you ensure that the next BotHandler is run.
