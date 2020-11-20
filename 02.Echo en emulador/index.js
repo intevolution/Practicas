@@ -55,14 +55,18 @@ const onTurnErrorHandler = async (context, error) => {
 // Set the onTurnError for the singleton BotFrameworkAdapter.
 adapter.onTurnError = onTurnErrorHandler;
 
+// Variable para nombre
+var datosRecibidos = 'Pedro';
+var bandera = 0;
+
 // Create the main dialog.
-const myBot = new EchoBot();
+const myBot = new EchoBot(datosRecibidos, bandera);
 
 // Listen for incoming requests.
 server.post('/api/messages', (req, res) => {
     adapter.processActivity(req, res, async (context) => {
         // Route to main dialog.
-        await myBot.run(context);
+        await myBot.run(context);        
     });
 });
 
