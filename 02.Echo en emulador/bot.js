@@ -12,19 +12,6 @@ class EchoBot extends ActivityHandler {
             const replyText = `Echo: ${ context.activity.text }`;
             await context.sendActivity(replyText);
 
-            //====== Mostrar toda la información que esta en context.activity
-            // const activityContent = context.activity;
-            // console.log(activityContent);
-
-            //====== Error
-            // await context.sendActivity(respuesta);
-
-            //====== Ejemplo de manejo de mensajes
-            // console.log(inMessage);
-            // if( inMessage === 'hola' ){                
-            //     await context.sendActivity('Hola!, ¿como te va?');
-            // }
-
             // By calling next() you ensure that the next BotHandler is run.
             await next(); //Indicar que terminó el turno del Bot
         });
